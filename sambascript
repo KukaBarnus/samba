@@ -16,7 +16,7 @@ mv /etc/samba/smb.conf /etc/samba/oldsmb.conf
 cp ./samba/smb.conf /etc/samba/smb.conf
 service smbd restart
 testparm
-useradd user2 –c "user2" –g users –m –d /home/user2 –s /bin/bash
+useradd user2 -c "user2" -g users -m -d /home/user2 -s /bin/bash
 passwd user2
 mkdir /srv/user2
 chown user2 /srv/user2
