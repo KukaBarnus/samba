@@ -1,0 +1,23 @@
+#!/bin/bash
+apt-get -y update
+apt-get -y upgrade
+apt-get -y install mc
+
+
+apt-get -y install samba 
+mkdir /srv/kozos
+chmod 777 /srv/kozos
+mkdir /srv/readonly
+chmod 755 /srv/readonly
+
+
+service smbd restart
+service smbd status
+useradd user2 –c "user2" –g users –m –d /home/user2 –s /bin/bash
+passwd user2
+123
+mkdir /srv/user2
+chown user2 /srv/user2
+chmod 700 /srv/user2
+smbpasswd -a user2
+service smbd restart
