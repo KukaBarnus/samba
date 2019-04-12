@@ -2,9 +2,9 @@
 apt-get -y update
 apt-get -y upgrade
 mv /etc/hostname /etc/oldhostname
-cp ./samba/hostname /etc/hostname
+cp hostname /etc/hostname
 mv /etc/hosts /etc/oldhosts
-cp ./samba/hosts /etc/hosts
+cp hosts /etc/hosts
 
 apt-get -y install samba 
 mkdir /srv/kozos
@@ -13,7 +13,7 @@ mkdir /srv/readonly
 chmod 755 /srv/readonly
 
 mv /etc/samba/smb.conf /etc/samba/oldsmb.conf
-cp ./samba/smb.conf /etc/samba/smb.conf
+cp smb.conf /etc/samba/smb.conf
 service smbd restart
 testparm
 useradd user2 -c "user2" -g users -m -d /home/user2 -s /bin/bash
